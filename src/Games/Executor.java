@@ -17,7 +17,9 @@ public class Executor {
             System.out.println(board.getCurrentPosition());
             System.out.println(board);
             board.step();
-            Thread.sleep(1000);
+            if(board.checkScore()){
+                break;
+            }
         }
     }
 }

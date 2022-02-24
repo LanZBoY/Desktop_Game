@@ -11,10 +11,11 @@ public class Main {
         cards[1][2] = new Left();
         cards[2][2] = new Left();
         cards[2][1] = new Straight();
+        cards[2][0] = new Score();
         /*
         * Pre-define data
         * {
-        *   n, n, n
+        *   n, n, X
         *   n, S, S
         *   n, R, L
         * }

@@ -5,6 +5,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class Return implements Card{
     @Override
+    public Boolean isScore() {
+        return false;
+    }
+
+    @Override
     public Direction getNextDirection(@NotNull Direction direction) throws Exception {
         switch (direction){
             case NORTH -> {
