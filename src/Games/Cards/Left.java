@@ -3,7 +3,7 @@ package Games.Cards;
 import Games.Enum.Direction;
 import org.jetbrains.annotations.NotNull;
 
-public class TurnLeft implements Card{
+public class Left implements Card{
     @Override
     public Direction getNextDirection(@NotNull Direction direction) throws Exception {
         switch (direction){

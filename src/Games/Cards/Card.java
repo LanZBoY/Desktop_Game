@@ -1,7 +1,10 @@
 package Games.Cards;
 
+import Games.Enum.Direction;
 import Games.Position;
 
 public interface Card {
-    void action(Position position);
+    Direction getNextDirection(Direction direction) throws Exception;
+
+    String toString();
 }

@@ -16,8 +16,7 @@ public class Executor {
         for(int i = 0; i < 9; i++){
             System.out.println(board.getCurrentPosition());
             System.out.println(board);
-            Runtime.getRuntime().exec("cmd /c cls");
-            board.move();
+            board.step();
             Thread.sleep(1000);
         }
     }

@@ -1,16 +1,20 @@
 package Games;
 
 import Games.Cards.Card;
+import Games.Enum.Direction;
 
 public class Board {
     private Card[][] cards;
 
     private WalkBot walkBot;
 
-    public Board (Card[][] cards, WalkBot walkBot, Position startPosition){
+    public Board (Card[][] cards, WalkBot walkBot,Direction direction, Position startPosition){
         this.cards = cards;
         this.walkBot = walkBot;
         walkBot.position = startPosition;
+        if(direction == null){
+            walkBot.direction = Direction.SOUTH;
+        }
     }
 
     public Card getCurrent(){
@@ -21,8 +25,12 @@ public class Board {
         return walkBot.position;
     }
 
-    public void move(){
-        cards[walkBot.position.x][walkBot.position.y].action(walkBot.position);
+    public void step() throws Exception {
+        if(cards[walkBot.position.x][walkBot.position.y] == null){
+            throw new Exception("Unknown Card Type");
+        }
+        walkBot.direction = cards[walkBot.position.x][walkBot.position.y].getNextDirection(walkBot.direction);
+        walkBot.step();
     }
 
 

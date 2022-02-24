@@ -1,2 +1,16 @@
-package Games.Cards;public class Score {
+package Games.Cards;
+
+import Games.Enum.Direction;
+
+public class Score implements Card{
+
+    @Override
+    public Direction getNextDirection(Direction direction) throws Exception {
+        return direction;
+    }
+
+    @Override
+    public String toString(){
+        return "X";
+    }
 }
