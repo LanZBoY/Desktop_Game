@@ -1,12 +1,11 @@
-package Games.Cards;
+package Games.Actions;
 
 import Games.Enum.Direction;
 
-public class Score implements Card{
-
+public class Straight implements Action {
     @Override
     public Boolean isScore() {
-        return true;
+        return false;
     }
 
     @Override
@@ -16,6 +15,6 @@ public class Score implements Card{
 
     @Override
     public String toString(){
-        return "X";
+        return "S";
     }
 }

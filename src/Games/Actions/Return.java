@@ -1,9 +1,9 @@
-package Games.Cards;
+package Games.Actions;
 
 import Games.Enum.Direction;
 import org.jetbrains.annotations.NotNull;
 
-public class Left implements Card{
+public class Return implements Action {
     @Override
     public Boolean isScore() {
         return false;
@@ -13,25 +13,24 @@ public class Left implements Card{
     public Direction getNextDirection(@NotNull Direction direction) throws Exception {
         switch (direction){
             case NORTH -> {
-                return Direction.WEST;
+                return Direction.SOUTH;
             }
             case EAST -> {
-                return Direction.NORTH;
+                return Direction.WEST;
             }
             case SOUTH -> {
-                return Direction.EAST;
+                return Direction.NORTH;
             }
             case WEST -> {
-                return Direction.SOUTH;
+                return Direction.EAST;
             }
             default -> {
                 throw new Exception();
             }
         }
     }
-
     @Override
     public String toString(){
-        return "L";
+        return "B";
     }
 }

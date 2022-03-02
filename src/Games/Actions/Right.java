@@ -1,9 +1,9 @@
-package Games.Cards;
+package Games.Actions;
 
 import Games.Enum.Direction;
 import org.jetbrains.annotations.NotNull;
 
-public class Right implements Card{
+public class Right implements Action {
     @Override
     public Boolean isScore() {
         return false;

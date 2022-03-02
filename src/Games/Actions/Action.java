@@ -1,9 +1,8 @@
-package Games.Cards;
+package Games.Actions;
 
 import Games.Enum.Direction;
-import Games.Position;
 
-public interface Card {
+public interface Action {
 
     Boolean isScore();
 

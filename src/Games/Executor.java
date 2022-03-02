@@ -20,6 +20,7 @@ public class Executor {
             if(board.checkScore()){
                 break;
             }
+            Thread.sleep(1000);
         }
     }
 }
