@@ -5,12 +5,12 @@ import Games.Actions.Score;
 import Games.Enum.Direction;
 
 public class Board {
-    private Action[][] cards;
+    private Action[][] actions;
 
     private WalkBot walkBot;
 
-    public Board (Action[][] cards, WalkBot walkBot, Direction direction, Position startPosition){
-        this.cards = cards;
+    public Board (Action[][] actions, WalkBot walkBot, Direction direction, Position startPosition){
+        this.actions = actions;
         this.walkBot = walkBot;
         walkBot.position = startPosition;
         if(direction == null){
@@ -19,7 +19,7 @@ public class Board {
     }
 
     public Action getCurrent(){
-        return cards[walkBot.position.x][walkBot.position.y];
+        return actions[walkBot.position.x][walkBot.position.y];
     }
 
     public Position getCurrentPosition(){
@@ -27,10 +27,10 @@ public class Board {
     }
 
     public void step() throws Exception {
-        if(cards[walkBot.position.x][walkBot.position.y] == null) {
+        if(actions[walkBot.position.x][walkBot.position.y] == null) {
             throw new Exception("Unknown Card Type");
         }
-        walkBot.direction = cards[walkBot.position.x][walkBot.position.y].getNextDirection(walkBot.direction);
+        walkBot.direction = actions[walkBot.position.x][walkBot.position.y].getNextDirection(walkBot.direction);
         walkBot.step();
     }
 
@@ -38,16 +38,16 @@ public class Board {
     @Override
     public String toString() {
         String result = "";
-        for(int j = 0; j < cards.length; j++){
-            for(int i = 0; i  < cards[j].length; i++){
+        for(int j = 0; j < actions.length; j++){
+            for(int i = 0; i  < actions[j].length; i++){
                 if(i == walkBot.position.x && j == walkBot.position.y){
                     result += "C";
-                }else if(cards[i][j] == null){
+                }else if(actions[i][j] == null){
                     result += "N";
                 }else{
-                    result += String.format("%s",cards[i][j]);
+                    result += String.format("%s", actions[i][j]);
                 }
-                if(i == cards[j].length - 1){
+                if(i == actions[j].length - 1){
                     result += "\n";
                 }else{
                     result += ", ";
@@ -58,7 +58,7 @@ public class Board {
     }
 
     public boolean checkScore() {
-        if(cards[walkBot.position.x][walkBot.position.y] instanceof Score){
+        if(actions[walkBot.position.x][walkBot.position.y] instanceof Score){
             System.out.println("得分並結束遊戲！");
             return true;
         }

@@ -9,12 +9,12 @@ import Games.WalkBot;
 
 public class Main {
     public static void main(String[] args){
-        Action[][] cards = new Action[3][3];
-        cards[1][1] = new Straight();
-        cards[1][2] = new Left();
-        cards[2][2] = new Left();
-        cards[2][1] = new Straight();
-        cards[2][0] = new Score();
+        Action[][] actions = new Action[3][3];
+        actions[1][1] = new Straight();
+        actions[1][2] = new Left();
+        actions[2][2] = new Left();
+        actions[2][1] = new Straight();
+        actions[2][0] = new Score();
         /*
         * Pre-define data
         * {
@@ -24,7 +24,7 @@ public class Main {
         * }
         */
 
-        Board board = new Board(cards, new WalkBot(),null, new Position(1,1));
+        Board board = new Board(actions, new WalkBot(),null, new Position(1,1));
         try {
         } catch (Exception e) {
             e.printStackTrace();
