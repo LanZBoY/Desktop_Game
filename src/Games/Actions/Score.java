@@ -5,12 +5,7 @@ import Games.Enum.Direction;
 public class Score implements Action {
 
     @Override
-    public Boolean isScore() {
-        return true;
-    }
-
-    @Override
-    public Direction getNextDirection(Direction direction) throws Exception {
+    public Direction getNextDirection(Direction direction){
         return direction;
     }
 

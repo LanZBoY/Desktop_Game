@@ -13,14 +13,5 @@ public class Executor {
         if(board == null){
             throw new Exception("No Board");
         }
-        for(int i = 0; i < 9; i++){
-            System.out.println(board.getCurrentPosition());
-            System.out.println(board);
-            board.step();
-            if(board.checkScore()){
-                break;
-            }
-            Thread.sleep(1000);
-        }
     }
 }

@@ -4,13 +4,9 @@ import Games.Enum.Direction;
 import org.jetbrains.annotations.NotNull;
 
 public class Left implements Action {
-    @Override
-    public Boolean isScore() {
-        return false;
-    }
 
     @Override
-    public Direction getNextDirection(@NotNull Direction direction) throws Exception {
+    public Direction getNextDirection(@NotNull Direction direction){
         switch (direction){
             case NORTH -> {
                 return Direction.WEST;
@@ -24,10 +20,8 @@ public class Left implements Action {
             case WEST -> {
                 return Direction.SOUTH;
             }
-            default -> {
-                throw new Exception();
-            }
         }
+        return direction;
     }
 
     @Override
