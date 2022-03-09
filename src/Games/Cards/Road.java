@@ -7,7 +7,7 @@ import Games.WalkBot;
 
 import java.util.ArrayList;
 
-public class Road {
+public abstract class Road {
     protected ArrayList<Direction> directions;
 
     public Road(){
@@ -56,8 +56,6 @@ public class Road {
         return false;
     }
 
-    public void startAction(WalkBot walkBot){
-
-    }
+    public abstract void startAction(WalkBot walkBot);
 
 }

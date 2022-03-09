@@ -26,7 +26,6 @@ public class Board {
         if(roads[walkBot.position.x][walkBot.position.y] == null) {
             throw new Exception("Unknown Card Type");
         }
-//        TODO:
 //        1. 取得下一步位置
         Position nextPosition = walkBot.getNextPosition();
 //        2. 檢查下一步卡片路是否可以走
@@ -37,13 +36,6 @@ public class Board {
 //      如果可以執行走路動作
         walkBot.oneStep();
         roads[walkBot.position.y][walkBot.position.x].startAction(walkBot);
-    }
-
-
-    @Override
-    public String toString() {
-//      TODO: 卡片不同
-        return super.toString();
     }
 
     public boolean checkScore() {
