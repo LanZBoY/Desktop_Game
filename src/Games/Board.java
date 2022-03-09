@@ -16,9 +16,11 @@ public class Board {
         this.roads = roads;
         this.walkBot = walkBot;
         walkBot.position = startPosition;
-        if(direction == null){
-            walkBot.direction = Direction.SOUTH;
+        if(direction != null){
+            walkBot.direction = direction;
+            return;
         }
+        walkBot.direction = Direction.SOUTH;
     }
     public void step() throws Exception {
         if(roads[walkBot.position.x][walkBot.position.y] == null) {
@@ -28,11 +30,13 @@ public class Board {
 //        1. 取得下一步位置
         Position nextPosition = walkBot.getNextPosition();
 //        2. 檢查下一步卡片路是否可以走
-        if(roads[nextPosition.y][nextPosition.x].canPass(walkBot.direction)){
-//            如果可以執行走路動作
-            walkBot.oneStep();
+        if(!roads[nextPosition.y][nextPosition.x].canPass(walkBot.direction)){
+//          否則丟Exception
+            throw new Exception("Can't pass the road");
         }
-//      否則丟Exception
+//      如果可以執行走路動作
+        walkBot.oneStep();
+        roads[walkBot.position.y][walkBot.position.x].startAction(walkBot);
     }
 
 

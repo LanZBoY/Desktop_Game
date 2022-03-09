@@ -13,5 +13,8 @@ public class Executor {
         if(board == null){
             throw new Exception("No Board");
         }
+        for (int i = 0; i < 2; i++) {
+            board.step();
+        }
     }
 }

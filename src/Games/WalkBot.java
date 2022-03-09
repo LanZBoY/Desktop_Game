@@ -19,13 +19,14 @@ public class WalkBot {
     }
 
     public Position getNextPosition(){
+        Position nextPosition = null;
         switch (direction){
-            case NORTH -> new Position(position.x, position.y - 1) ;
-            case EAST -> new Position(position.x + 1, position.y);
-            case SOUTH -> new Position(position.x, position.y + 1);
-            case WEST -> new Position(position.x - 1, position.y);
+            case NORTH ->  nextPosition = new Position(position.x, position.y - 1) ;
+            case EAST -> nextPosition = new Position(position.x + 1, position.y);
+            case SOUTH -> nextPosition = new Position(position.x, position.y + 1);
+            case WEST -> nextPosition = new Position(position.x - 1, position.y);
         }
-        return null;
+        return nextPosition;
     }
 
 //
