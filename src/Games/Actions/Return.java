@@ -1,12 +1,11 @@
 package Games.Actions;
 
 import Games.Enum.Direction;
-import org.jetbrains.annotations.NotNull;
 
 public class Return implements Action {
 
     @Override
-    public Direction getNextDirection(@NotNull Direction direction){
+    public Direction getNextDirection(Direction direction){
         switch (direction){
             case NORTH -> {
                 return Direction.SOUTH;

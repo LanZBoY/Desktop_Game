@@ -1,5 +1,6 @@
 package Games.Cards;
 
+import Games.Actions.Return;
 import Games.Enum.Direction;
 
 import java.util.ArrayList;
@@ -40,7 +41,9 @@ public class RightAngleRoad extends Road{
     }
 
     @Override
-    public Direction getNextDirection(Direction direction) {
+    public Direction getNextDirection(Direction botDirection) {
+        Direction fromDirection = new Return().getNextDirection(botDirection);
+        this.directions.indexOf(fromDirection);
         return null;
     }
 }
