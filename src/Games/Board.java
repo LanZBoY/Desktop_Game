@@ -36,7 +36,7 @@ public class Board {
         }
 //      如果可以執行走路動作
         walkBot.oneStep();
-        roads[walkBot.position.y][walkBot.position.x].startAction(walkBot);
+        roads[walkBot.position.y][walkBot.position.x].getNextDirection(walkBot.direction);
     }
 
 

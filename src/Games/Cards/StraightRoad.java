@@ -2,7 +2,6 @@ package Games.Cards;
 
 import Games.Actions.Straight;
 import Games.Enum.Direction;
-import Games.WalkBot;
 
 import java.util.ArrayList;
 
@@ -15,7 +14,7 @@ public class StraightRoad extends Road {
     }
 
     @Override
-    public void startAction(WalkBot walkBot){
-        walkBot.direction = new Straight().getNextDirection(walkBot.direction);
+    public Direction getNextDirection(Direction direction){
+        return new Straight().getNextDirection(direction);
     }
 }

@@ -1,18 +1,13 @@
 package Games.Cards;
 
-import Games.Actions.Action;
 import Games.Actions.Return;
 import Games.Enum.Direction;
 import Games.WalkBot;
 
 import java.util.ArrayList;
 
-public class Road {
+public abstract class Road {
     protected ArrayList<Direction> directions;
-
-    public Road(){
-        super();
-    }
 
     public void turnClockwise(){
         for(int i = 0; i < directions.size(); i++){
@@ -56,8 +51,5 @@ public class Road {
         return false;
     }
 
-    public void startAction(WalkBot walkBot){
-
-    }
-
+    public abstract Direction getNextDirection(Direction direction);
 }
