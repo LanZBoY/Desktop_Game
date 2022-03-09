@@ -1,12 +1,13 @@
 package Games.Cards;
 
+import Games.Actions.Left;
 import Games.Actions.Return;
+import Games.Actions.Right;
 import Games.Enum.Direction;
 
 import java.util.ArrayList;
 
 public class RightAngleRoad extends Road{
-//  index 0 左轉, index 1 右轉
     public RightAngleRoad(){
         if(super.directions == null){
             super.directions = new ArrayList<>();
@@ -41,9 +42,20 @@ public class RightAngleRoad extends Road{
     }
 
     @Override
-    public Direction getNextDirection(Direction botDirection) {
+    public Direction getNextDirection(Direction botDirection) throws Exception {
         Direction fromDirection = new Return().getNextDirection(botDirection);
-        this.directions.indexOf(fromDirection);
-        return null;
+        //  index 0 左轉, index 1 右轉
+        int index = this.directions.indexOf(fromDirection);
+        switch (index){
+            case 0 ->{
+                return new Left().getNextDirection(botDirection);
+            }
+            case 1 ->{
+                return new Right().getNextDirection(botDirection);
+            }
+            default -> {
+                throw new Exception("Invalid direction");
+            }
+        }
     }
 }

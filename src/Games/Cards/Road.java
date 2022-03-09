@@ -51,5 +51,5 @@ public abstract class Road {
         return false;
     }
 
-    public abstract Direction getNextDirection(Direction direction);
+    public abstract Direction getNextDirection(Direction direction) throws Exception;
 }

@@ -23,7 +23,8 @@ public class Board {
         walkBot.direction = Direction.SOUTH;
     }
     public void step() throws Exception {
-        if(roads[walkBot.position.x][walkBot.position.y] == null) {
+        System.out.println(walkBot.position);
+        if(roads[walkBot.position.y][walkBot.position.x] == null) {
             throw new Exception("Unknown Card Type");
         }
 //        1. 取得下一步位置
@@ -35,7 +36,7 @@ public class Board {
         }
 //      如果可以執行走路動作
         walkBot.oneStep();
-        roads[walkBot.position.y][walkBot.position.x].getNextDirection(walkBot.direction);
+        walkBot.direction = roads[walkBot.position.y][walkBot.position.x].getNextDirection(walkBot.direction);
     }
 
     public boolean checkScore() {
