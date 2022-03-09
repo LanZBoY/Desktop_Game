@@ -1,11 +1,10 @@
 package Games.Cards;
 
-import Games.WalkBot;
+import Games.Enum.Direction;
 
 public class CrossRoad extends Road{
-
     @Override
-    public void startAction(WalkBot walkBot) {
-
+    public Direction getNextDirection(Direction direction) {
+        return null;
     }
 }
